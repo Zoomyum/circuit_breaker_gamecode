@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkwb3jw0g5c5f"]
+
+[ext_resource type="Script" uid="uid://bopmnva260fgv" path="res://scripts/title_screen.gd" id="1_qyuap"]
+[ext_resource type="FontFile" uid="uid://kv272if6pyex" path="res://assets/Shock Surgent.otf" id="2_ch40n"]
+[ext_resource type="FontFile" uid="uid://vmlta376dha" path="res://assets/Kenney Future.ttf" id="3_dfj8j"]
+[ext_resource type="AudioStream" uid="uid://dm1so4dtkj2h2" path="res://assets/audio/click.wav" id="5_85feu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyuap")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.050980393, 1)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 175.0
+offset_right = 1214.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0.9607843, 0.9372549, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("2_ch40n")
+theme_override_font_sizes/font_size = 88
+text = "CIRCUIT BREAKER"
+
+[node name="WarnLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 255.0
+offset_right = 590.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("3_dfj8j")
+theme_override_font_sizes/font_size = 18
+text = "!! OVERLOAD DETECTED !!"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 410.0
+offset_right = 765.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0.8862745, 0.1254902, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("3_dfj8j")
+theme_override_font_sizes/font_size = 26
+text = "[ START ]"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 550.0
+offset_right = 750.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.53333336, 0.5294118, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("3_dfj8j")
+theme_override_font_sizes/font_size = 20
+text = "[ QUIT ]"
+
+[node name="HowButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 485.0
+offset_right = 749.99976
+offset_bottom = 533.00037
+theme_override_colors/font_color = Color(0.53333336, 0.5294118, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("3_dfj8j")
+theme_override_font_sizes/font_size = 20
+text = "[ HOW TO PLAY ]"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_85feu")

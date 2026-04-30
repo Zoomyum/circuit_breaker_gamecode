@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3xv0fibf3m00"]
+
+[ext_resource type="Script" uid="uid://s6l27waxwjwx" path="res://scenes/game_screen.gd" id="1_5m38y"]
+[ext_resource type="PackedScene" uid="uid://rjahcycpnkml" path="res://scenes/ReactorNode.tscn" id="1_yxycf"]
+[ext_resource type="PackedScene" uid="uid://d3wtf4phinutv" path="res://scenes/CoolantNode.tscn" id="2_5m38y"]
+[ext_resource type="FontFile" uid="uid://vmlta376dha" path="res://assets/Kenney Future.ttf" id="2_nt2i5"]
+[ext_resource type="PackedScene" uid="uid://crpmcn30kyhjl" path="res://scenes/ShieldNode.tscn" id="3_nt2i5"]
+[ext_resource type="PackedScene" uid="uid://cknp5rqf7dww0" path="res://scenes/PowerNode.tscn" id="4_wx6og"]
+[ext_resource type="PackedScene" uid="uid://buqur2iwn4tln" path="res://scenes/ExhaustNode.tscn" id="5_1iofb"]
+[ext_resource type="PackedScene" uid="uid://b16jxlibydt3t" path="res://scenes/BufferTankNode.tscn" id="6_mfff6"]
+[ext_resource type="AudioStream" uid="uid://dm1so4dtkj2h2" path="res://assets/audio/click.wav" id="10_mfff6"]
+[ext_resource type="AudioStream" uid="uid://cekv8w732dxix" path="res://assets/audio/warning.wav" id="11_mfff6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5m38y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.050980393, 1)
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 60.0
+offset_right = 740.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.9607843, 0.9372549, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("2_nt2i5")
+theme_override_font_sizes/font_size = 28
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="NodeGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 30.000027
+offset_top = 170.0
+offset_right = 1030.0
+offset_bottom = 570.0001
+scale = Vector2(2, 2)
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="NodeReactor" parent="NodeGrid" instance=ExtResource("1_yxycf")]
+custom_minimum_size = Vector2(190, 110)
+layout_mode = 2
+fill_rate = 10.0
+
+[node name="NodeCoolant" parent="NodeGrid" instance=ExtResource("2_5m38y")]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+
+[node name="NodeShield" parent="NodeGrid" instance=ExtResource("3_nt2i5")]
+layout_mode = 2
+fill_rate = 7.0
+
+[node name="NodePower" parent="NodeGrid" instance=ExtResource("4_wx6og")]
+layout_mode = 2
+fill_rate = 8.0
+
+[node name="NodeExhaust" parent="NodeGrid" instance=ExtResource("5_1iofb")]
+layout_mode = 2
+fill_rate = 6.0
+
+[node name="NodeBuffer" parent="NodeGrid" instance=ExtResource("6_mfff6")]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_mfff6")
+
+[node name="WarnPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_mfff6")

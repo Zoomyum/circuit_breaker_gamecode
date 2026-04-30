@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnnye5obws2n3"]
+
+[ext_resource type="Script" uid="uid://dvleuv8yvaojx" path="res://scenes/how_to_play.gd" id="1_30apa"]
+[ext_resource type="FontFile" uid="uid://kv272if6pyex" path="res://assets/Shock Surgent.otf" id="1_88ieg"]
+[ext_resource type="FontFile" uid="uid://vmlta376dha" path="res://assets/Kenney Future.ttf" id="2_30apa"]
+[ext_resource type="AudioStream" uid="uid://dm1so4dtkj2h2" path="res://assets/audio/click.wav" id="4_xkrkv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_30apa")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.050980393, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 50.0
+offset_right = 256.0
+offset_bottom = 106.00004
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_88ieg")
+theme_override_font_sizes/font_size = 56
+text = "HOW TO PLAY"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_top = 150.0
+offset_right = 0.5
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_30apa")
+theme_override_font_sizes/font_size = 26
+text = "All the Nodes are slowly overheating.
+You have to stop this from happening  by diverting the pressure 
+elsewhere. 
+The exhaust node can remove the pressue it is holding
+ but there is a cooldown..."
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.5
+offset_top = -150.0
+offset_right = 165.5
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.53333336, 0.5294118, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("2_30apa")
+theme_override_font_sizes/font_size = 20
+text = "[ BACK TO TITLE SCREEN ]"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xkrkv")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmq1wv6pysbxu"]
+
+[ext_resource type="Script" uid="uid://bpdcdxyhrpc5f" path="res://scenes/game_over.gd" id="1_6bcno"]
+[ext_resource type="FontFile" uid="uid://vmlta376dha" path="res://assets/Kenney Future.ttf" id="2_qae0b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bcno")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.050980393, 1)
+
+[node name="ExplodeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 180.0
+offset_right = 1040.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.7607843, 0.21960784, 0.21960784, 1)
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 320.0
+offset_right = 940.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.9607843, 0.9372549, 0.8784314, 1)
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 490.0
+offset_right = 790.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.7607843, 0.21960784, 0.21960784, 1)
+theme_override_font_sizes/font_size = 26
+text = "[ PLAY AGAIN ]"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 600.0
+offset_right = 750.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0.53333336, 0.5294118, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_font_sizes/font_size = 20
+text = "[ QUIT ]"
